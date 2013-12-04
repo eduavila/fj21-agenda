@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	 xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	 version="3.0">
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+    
+    <display-name>fj21-agenda</display-name>
+    <welcome-file-list> 
+        <welcome-file>index.html</welcome-file>
+        <welcome-file>index.htm</welcome-file>
+        <welcome-file>index.jps</welcome-file>
+    
+    </welcome-file-list>
+    
+    
+    <!-- criando Servlet -->
+    <servlet>
+        <servlet-name>servletOiMundo</servlet-name>     
+        <servlet-class>
+            com.agenda.OiMundo
+        </servlet-class>  
+    </servlet>
+    
+    
+    <!--Mapeando Servlet -->
+    <servlet-mapping>
+        <servlet-name>servletOiMundo</servlet-name>
+        <url-pattern>/oi</url-pattern>
+    </servlet-mapping>
+    
+    
+    
+    <!--Configurando Servlet AdionaContato -->
+        <servlet>
+        <servlet-name>servletAddContato</servlet-name>     
+        <servlet-class>
+            com.agenda.AdicionaContatoServlet
+        </servlet-class>  
+    </servlet>
+    
+    
+    <!--Mapeando Servlet -->
+    <servlet-mapping>
+        <servlet-name>servletAddContato</servlet-name>
+        <url-pattern>/addcontato</url-pattern>
+    </servlet-mapping>
+    
+  
+           
+</web-app>
