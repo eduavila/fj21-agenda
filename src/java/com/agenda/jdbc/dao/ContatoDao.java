@@ -32,8 +32,8 @@ public class ContatoDao {
     
     public void Adicionar(Contato contato){        
         String sql = "INSERT INTO CONTATOS"+
-                "(nome,email,endereco)"+
-                "values (?,?,?)";
+                "(nome,email,endereco,dataNascimento)"+
+                "values (?,?,?,?)";
         
         try{
             // prepared statement
@@ -43,7 +43,9 @@ public class ContatoDao {
             stmt.setString(1,contato.getNome());
             stmt.setString(2, contato.getEmail());
             stmt.setString(3,contato.getEndereco());
-       
+            
+            java.sql.Date data = new java.sql.Date(contato.getDataNascimento().getTimeInMillis());
+            stmt.setDate(4,data);
             stmt.execute();
             stmt.close();
             

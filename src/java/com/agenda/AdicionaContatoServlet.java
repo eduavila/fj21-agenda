@@ -38,19 +38,21 @@ public class AdicionaContatoServlet extends HttpServlet{
         String nome = request.getParameter("nome");
         String endereco = request.getParameter("endereco");
         String email = request.getParameter("email");
-        String dataEmTexto = request.getParameter("datanascimento");
+        String dataEmTexto = request.getParameter("DataNascimento");
         Calendar dataNascimento = null;
         
         // fazendo a conversão da data
         
-//        try{
-////            Date date = new SimpleDateFormat("dd/MM/yyyy").parse(dataEmTexto);
-////            dataNascimento = Calendar.getInstance();
-////            dataNascimento.setTime(date);
-//        }catch(ParseException e){
-//            out.println("Erro de conversão de data.");
-//            return;// para a execução do método
-//        }
+        try{
+          
+            Date data = new SimpleDateFormat("dd/MM/yyyy").parse(dataEmTexto);
+            dataNascimento = Calendar.getInstance();
+            dataNascimento.setTime(data);
+           
+        }catch(ParseException e){
+            out.println("Erro de conversão de data."+e.toString());
+            return;// para a execução do método
+        }
         
         
         // monta um objeto contato
