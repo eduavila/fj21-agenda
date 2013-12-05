@@ -51,6 +51,21 @@
         <url-pattern>/addcontato</url-pattern>
     </servlet-mapping>
     
+    
+    <!--Configurando Servlet Lista Contato -->
+        <servlet>
+        <servlet-name>servletListaContato</servlet-name>     
+        <servlet-class>
+            com.agenda.ListaContatoServlet
+        </servlet-class>  
+    </servlet>
+    
+    
+    <!--Mapeando Servlet -->
+    <servlet-mapping>
+        <servlet-name>servletListaContato</servlet-name>
+        <url-pattern>/lista/*</url-pattern>
+    </servlet-mapping>
   
            
 </web-app>
