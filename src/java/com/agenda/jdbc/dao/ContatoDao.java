@@ -53,4 +53,38 @@ public class ContatoDao {
             throw new RuntimeException(e);
         }
     }
+    
+    
+    public List<Contato> getLista(){
+        try{
+            List<Contato> contatos = new ArrayList();
+            
+            PreparedStatement stmt = this.connection.prepareStatement("select * from contatos");
+            
+            ResultSet query = stmt.executeQuery();
+            
+            while(query.next()){
+                // cria objeto contato para add na List
+                Contato contato =new Contato();
+                contato.setId(query.getLong("id"));
+                contato.setNome(query.getString("nome"));
+                contato.setEndereco(query.getString("endereco"));
+                contato.setEmail(query.getString("email"));
+                
+                Calendar data = Calendar.getInstance();
+                if(query.getDate("dataNascimento")!= null){
+                    data.setTime(query.getDate("dataNascimento"));
+                    contato.setDataNascimento(data);
+                }
+                contatos.add(contato);
+            }
+            
+            query.close();
+            stmt.close();
+            
+            return contatos;
+        }catch(SQLException e){
+            throw new RuntimeException(e);
+        }
+    }
 }

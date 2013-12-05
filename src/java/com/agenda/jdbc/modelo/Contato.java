@@ -27,7 +27,9 @@ public class Contato {
     public Long getId(){
         return this.id;
     }
-  
+    public void setId(Long novo){
+        this.id = novo;
+    }
     // Nome
     
     public String getNome(){
