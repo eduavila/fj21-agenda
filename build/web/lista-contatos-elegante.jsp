@@ -15,6 +15,12 @@
         <title>JSP Page</title>
     </head>
     <body>
+        <!-- Incluindo cabeçalho -->
+        
+        <c:import url="cabecalho.jsp" />
+        
+        
+        
         <!-- Cria o DAo -->
         <jsp:useBean id="dao" class="com.agenda.jdbc.dao.ContatoDao"/>
    
@@ -60,6 +66,6 @@
             
         </table>
     
-    
+        <c:import url="rodape.jsp"/>
     </body>
 </html>

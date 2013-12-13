@@ -17,7 +17,7 @@
     
     </welcome-file-list>
     
-    
+    <!-- 
     <error-page>
         <exception-type>java.lang.Exception</exception-type>
         <location>/erro.html</location>
@@ -27,7 +27,7 @@
         <error-code>404</error-code>
         <location>/404.html</location>
     </error-page>
-    
+    -->
     <!-- criando Servlet -->
     <servlet>
         <servlet-name>servletOiMundo</servlet-name>     
