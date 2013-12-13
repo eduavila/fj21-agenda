@@ -4,6 +4,7 @@
     Author     : suporte
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -23,7 +24,12 @@
     </head>
     <body>
         
-        <img src="img/Logo.jpg" width="200" height="150" alt="Logo"/>
+        <!-- url com TagLib -->
+        
+        <c:url value="img/Logo.jpg" var="imagem"/>
+        
+        <!-- c:url value="" var ="" -->
+        <img src="<c:url value="img/Logo.jpg"/>" width="200" height="150" alt="Logo"/>
         <div class="titulo"><h1>Fj21-Agenda</h1></div>
         <hr>
 
