@@ -40,25 +40,32 @@
                 <tr bgcolor="#${id.count%2 == 0? 'aaee88':'fffff'}">
                    
                     <td>${contato.nome}</td>
-                   
-                        <%-- <c:choose>
+                    
+                 <%--   <td>
+                        <c:choose>
                             <c:when test="${not empty contato.email}">
-                                  <a href="mailto:${contato.email}">${contato.email}</a></td>
+                                  <a href="mailto:${contato.email}">${contato.email}</a>
                             </c:when>
                                   <c:otherwise>
                                     E-mail não informado
                                   </c:otherwise>
 
                         </c:choose>
-                        --%>    
+                        
+                    </td> --%>   
+                    
+                        <%--
+                            Usando IF para alterar
+                        --%>
                         <td>
-                            <c:if test=" ${not empty contato.email}">
+                            <c:if test="${not empty contato.email}">
                                  <a href="mailto:${contato.email}">${contato.email}</a>
                             </c:if> 
                             <c:if test="${empty contato.email}">
                                 Email Não informado
                             </c:if>
                         </td>            
+                        
                        <td>${contato.endereco}</td>
                     <td><fmt:formatDate value="${contato.dataNascimento.time}" pattern="dd/MM/yyyy"/></td>
                     
