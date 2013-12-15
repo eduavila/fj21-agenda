@@ -83,7 +83,7 @@
     
     
      <!--Configurando Servlet MinhaServlet -->
-        <servlet>
+    <servlet>
         <servlet-name>minhaServlet</servlet-name>     
         <servlet-class>
             com.agenda.MinhaServlet
@@ -94,7 +94,7 @@
     <!--Mapeando Servlet -->
     <servlet-mapping>
         <servlet-name>minhaServlet</servlet-name>
-        <url-pattern>/minhaservlet/*</url-pattern>
+        <url-pattern>/minhaservlet</url-pattern>
     </servlet-mapping>
     
 </web-app>

@@ -25,12 +25,8 @@ public class MinhaServlet  extends HttpServlet{
     }
     @Override
     protected void service(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException{
-        PrintWriter out  = response.getWriter();
-        
-        contador++;
-        
-        out.println("Contador= "+contador);
-        
+        RequestDispatcher rd = request.getRequestDispatcher("/adiciona-contato.jsp");
+        rd.forward(request, response);
     }
     
     

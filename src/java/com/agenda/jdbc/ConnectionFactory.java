@@ -12,8 +12,6 @@ package com.agenda.jdbc;
  * @author Eduardo Avila Malheiros
  */
 import java.sql.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 
 public class ConnectionFactory {

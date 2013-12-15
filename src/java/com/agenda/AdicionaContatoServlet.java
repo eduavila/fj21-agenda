@@ -11,6 +11,7 @@ import java.io.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -70,13 +71,12 @@ public class AdicionaContatoServlet extends HttpServlet{
         dao.Adicionar(contato);
         
         // imprime o nome do contato que foi adicionado
-        
-        out.println("<html>");
-        out.println("<body>");
-        out.println("Contato "+contato.getNome()+
-                " adicionado com Sucesso");
-        out.println("</body>");
-        out.println("</html>"); 
+      
+      // redirecionado para pagina contato-adicionado.jsp
+      RequestDispatcher rd = request.getRequestDispatcher("/contato-adicionado.jsp");
+      
+      rd.forward(request, response);
+      
     }
     
     @Override

@@ -31,7 +31,7 @@ public class ContatoDao {
     
     
     public void Adicionar(Contato contato){        
-        String sql = "INSERT INTO CONTATOS"+
+        String sql = "INSERT INTO contatos"+
                 "(nome,email,endereco,dataNascimento)"+
                 "values (?,?,?,?)";
         
