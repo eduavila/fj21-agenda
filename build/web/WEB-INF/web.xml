@@ -97,4 +97,39 @@
         <url-pattern>/minhaservlet</url-pattern>
     </servlet-mapping>
     
+    
+    
+    <!-- Mapenado Servlet SistemaTodaServlet -->
+    <servlet>
+        <servlet-name>sistemaTodoServlet</servlet-name>     
+        <servlet-class>
+            com.agenda.SistemaTodoServlet
+        </servlet-class>  
+    </servlet>
+    
+    
+    <!--Mapeando Servlet -->
+    <servlet-mapping>
+        <servlet-name>sistemaTodoServlet</servlet-name>
+        <url-pattern>
+            /sistema
+        </url-pattern>
+    </servlet-mapping>
+    
+    
+    
+    <!-- Servlet contraloda -->
+    
+    <servlet>
+        <servlet-name>controlador</servlet-name>
+        <servlet-class>
+            com.agenda.mvc.servlet.ControllerServlet
+        </servlet-class>
+    </servlet>
+   
+    <servlet-mapping>
+        <servlet-name>controlador</servlet-name>
+        <url-pattern>/mvc</url-pattern>
+    </servlet-mapping>
+    
 </web-app>
