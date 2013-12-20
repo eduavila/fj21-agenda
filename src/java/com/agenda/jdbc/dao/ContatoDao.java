@@ -87,4 +87,42 @@ public class ContatoDao {
             throw new RuntimeException(e);
         }
     }
+    
+    
+    public void atualiza(Contato contato){
+        try{
+
+            String sql = "update contatos set nome=?, email=?,"
+                    +"endereco=?, dataNascimento=? where id=?";
+
+            
+            PreparedStatement stmt = this.connection.prepareStatement(sql);
+            
+             stmt.setString(1, contato.getNome());
+            stmt.setString(2, contato.getEmail());
+            stmt.setString(3, contato.getEndereco());
+            stmt.setDate(4,new java.sql.Date(contato.getDataNascimento().getTimeInMillis()));
+            stmt.setLong(5, contato.getId());
+            stmt.execute();
+            stmt.close();
+
+                  
+        }catch(SQLException erro){
+            throw new RuntimeException(erro);
+        }
+    }
+    
+    
+    public void remove(Contato contato){
+        try{
+            PreparedStatement stmt = this.connection.prepareStatement("Delete from contato where id=?");
+            stmt.setLong(1,contato.getId());
+            
+            stmt.execute();
+            stmt.close();
+        
+        }catch(SQLException e){
+            throw new RuntimeException(e);
+        }
+    }
 }
