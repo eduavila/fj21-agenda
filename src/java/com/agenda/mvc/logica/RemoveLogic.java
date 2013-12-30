@@ -11,6 +11,9 @@ import com.agenda.jdbc.modelo.Contato;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.sql.Connection;
+
+
 /**
  *
  * @author eduardo
@@ -23,6 +26,10 @@ public class RemoveLogic implements Logica{
         
         Contato contato = new Contato();
         contato.setId(Long.parseLong(req.getParameter("id")));
+        
+        // pegando conexão  do request
+        
+        Connection connection = (Connection) req.getAttribute("conexao");
         
         ContatoDao dao = new ContatoDao();
         

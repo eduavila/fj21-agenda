@@ -147,4 +147,19 @@
         <filter-name>cronometro</filter-name>
         <url-pattern>/*</url-pattern>       
     </filter-mapping>
+    
+    
+    
+    <!--Configurando filtro conexão  -->
+    
+    <filter>
+        <filter-name>FiltroConexao</filter-name>
+        <filter-class>com.agenda.filtro.FiltroConexao</filter-class>
+    </filter>
+    
+    <filter-mapping>
+        <filter-name>FiltroConexao</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
 </web-app>

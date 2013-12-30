@@ -12,6 +12,8 @@ import java.util.Calendar;
 import java.util.Date;
 import com.agenda.jdbc.dao.ContatoDao;
 import javax.servlet.RequestDispatcher;
+
+import java.sql.Connection;
 /**
  *
  * @author eduardo
@@ -37,7 +39,12 @@ public class AlterarContatoLogic implements  Logica {
         
         contato.setDataNascimento(dataNascimento);
         
-        ContatoDao dao = new ContatoDao();
+        //Busca a conexão pendurada na requisição 
+        Connection connection = (Connection) req.getAttribute("conexao");
+        
+        
+        // passe a conexão no construtor
+        ContatoDao dao = new ContatoDao(connection);
         
         dao.atualiza(contato);
         

@@ -23,12 +23,17 @@ import com.agenda.jdbc.modelo.*;
 
 
 public class ContatoDao {
+    
     private Connection connection;
+    
+   
+    public ContatoDao(Connection connection){
+        this.connection = connection;
+    }
     
     public ContatoDao(){
         this.connection = new ConnectionFactory().getConnection();
     }
-    
     
     public void Adicionar(Contato contato){        
         String sql = "INSERT INTO contatos"+
@@ -38,7 +43,7 @@ public class ContatoDao {
         try{
             // prepared statement
             
-            PreparedStatement stmt = connection.prepareStatement(sql);
+            PreparedStatement stmt = this.connection.prepareStatement(sql);
             
             stmt.setString(1,contato.getNome());
             stmt.setString(2, contato.getEmail());
